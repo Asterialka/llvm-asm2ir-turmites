@@ -1,1 +1,10 @@
-# llvm-asm2ir-turmites
+# ASM → LLVM IR
+
+Колония турмитов на собственном ассемблере [TC32](ISA.md) с ASM2IR-генератором и запуском через LLVM ExecutionEngine в двух вариантах (вызовы эмуляторов инструкций и прямой LLVM IR), а также симуляцией без генерации IR.
+
+```sh
+make -j2                  # сборка
+make run                  # запуск через прямой LLVM IR
+make run MODE=calls       # запуск через IR с вызовами эмуляторов
+make run MODE=sim         # симуляция без генерации IR
+```

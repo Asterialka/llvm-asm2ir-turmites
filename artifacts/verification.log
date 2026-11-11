@@ -1,0 +1,11 @@
+./build/asm2ir --mode calls --emit-ir build/calls.ll --emit-only
+./build/asm2ir --mode ir --emit-ir build/direct.ll --emit-only
+python3 tests/check.py
+Application: 1 frames, all modes match C: frames=1 checksum=bc7ca1cc0ab0f789 draws=ab59e59dc9e2a08d
+Application: 2 frames, all modes match C: frames=2 checksum=7dafdfce99ad291d draws=0719041372baffdd
+Application: 16 frames, all modes match C: frames=16 checksum=dbbd6e8046486475 draws=62a9c5ae0c8c6635
+Application: 64 frames, all modes match C: frames=64 checksum=74c88afcbcfb072d draws=8117cb1251cf6125
+ISA: 500 generated instructions and control-flow cases match independent oracle
+Parser/CLI: malformed programs and options rejected
+IR: emulator calls only in calls mode; native operations and branches in ir mode
+All checks passed.
